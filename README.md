@@ -2,8 +2,8 @@
 # 📑 Mesa de Partes Digital (MDP)
 
 ![Status](https://img.shields.io/badge/status-en%20desarrollo-yellow)
-![License](![License](https://img.shields.io/badge/licencia-Todos%20los%20derechos%20reservados-red)
-)
+![License](https://img.shields.io/badge/licencia-Todos%20los%20derechos%20reservados-red)
+
 ![Tech](https://img.shields.io/badge/tecnología-WebApp-green)
 
 La **Mesa de Partes Digital (MDP)** es una aplicación web que permite gestionar de manera eficiente la recepción, derivación y seguimiento de documentos institucionales.  
