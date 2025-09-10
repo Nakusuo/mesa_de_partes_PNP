@@ -37,7 +37,6 @@ Su objetivo es optimizar tiempos, garantizar trazabilidad y ofrecer transparenci
 
 ---
 
-## 🛠️ Tecnologías
 
 ## 🛠️ Tecnologías
 
