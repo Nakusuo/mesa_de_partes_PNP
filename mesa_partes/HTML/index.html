@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa de Partes Digital - UNITIC</title>
+  <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body>
+  <div class="header">Mesa de Partes Digital - UNITIC</div>
+  <div class="main">
+    <div class="login-wrapper">
+      <div class="login-left">
+        <img src="../imagenes/logoPNP.png" alt="Logo">
+      </div>
+      <div class="login-right">
+        <form>
+          <div class="input-group">
+            <span class="icon">👤</span>
+            <input type="text" placeholder="Usuario">
+          </div>
+          <div class="input-group">
+            <span class="icon">🔒</span>
+            <input type="password" id="password" placeholder="Contraseña">
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+          </div>
+          <button type="submit">Ingresar</button>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../JS/login.js"></script>
+</body>
+</html>

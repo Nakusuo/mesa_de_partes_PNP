@@ -1,0 +1,111 @@
+/* ===== GENERAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #2f4f4f; /* Verde oscuro sobrio */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+/* ===== ENCABEZADO ===== */
+.header {
+  background: #000; /* Negro institucional */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.main {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+/* ===== MENÚ LATERAL ===== */
+.menu-container {
+  width: 260px;
+  background: #25462d; /* Verde oscuro institucional */
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  gap: 15px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== BOTONES ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+button i {
+  font-size: 18px;
+}
+
+button:hover {
+  transform: translateX(5px);
+}
+
+/* Colores coherentes */
+.seguimiento { background: #28a745; }
+.seguimiento:hover { background: #218838; }
+
+.registrar { background: #ffc107; color: #000; }
+.registrar:hover { background: #e0a800; }
+
+.administrar { background: #343a40; }
+.administrar:hover { background: #23272b; }
+
+.ayuda { background: #639273; }
+.ayuda:hover { background: #50755c; }
+
+.salir { background: #dc3545; }
+.salir:hover { background: #c82333; }
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.content {
+  flex: 1;
+  padding: 40px;
+  background: #3c4744; /* verde-gris armónico */
+  overflow-y: auto;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .menu-container {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
+    height: auto;
+  }
+
+  button {
+    flex: 1;
+    justify-content: center;
+    gap: 8px;
+  }
+}

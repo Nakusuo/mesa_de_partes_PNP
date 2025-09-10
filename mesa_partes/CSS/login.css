@@ -1,0 +1,132 @@
+/* ===== GENERAL ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #2f4f4f; /* verde oscuro sobrio */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ===== TÍTULO SUPERIOR ===== */
+.header {
+  width: 100%;
+  text-align: center;
+  background: #000000; /* verde institucional */
+  color: #fff;
+  padding: 20px 0;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== WRAPPER (dos lados) ===== */
+.login-wrapper {
+  display: flex;
+  width: 800px;
+  height: 450px;
+  background: #4d7c75; /* verde medio */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.35);
+}
+
+/* ===== IZQUIERDA (logo) ===== */
+.login-left {
+  flex: 1;
+  background: #e2e8e5; /* gris claro armónico */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-left img {
+  max-width: 80%;
+  height: auto;
+  opacity: 0.7; /* más visible pero aún discreto */
+}
+
+/* ===== DERECHA (formulario) ===== */
+.login-right {
+  flex: 1;
+  background: #639273; /* verde más claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== INPUTS ===== */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #3c4744; /* gris verdoso oscuro */
+  border-radius: 8px;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.input-group:hover {
+  background: #2f3a37; /* hover más oscuro */
+}
+
+.input-group .icon {
+  font-size: 18px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* ===== BOTÓN ===== */
+button {
+  background: #25462d;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #1e3824;
+  transform: scale(1.02);
+}
+
+/* ===== LINKS ===== */
+a {
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #e2e8e5; /* armónico con el panel izquierdo */
+}
