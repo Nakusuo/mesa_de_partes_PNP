@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Documentos</title>
+  <link rel="stylesheet" href="../CSS/registro.css">
+</head>
+<body>
+  <div class="header">📄 Registro de Documentos</div>
+  <div class="container">
+    <form method="POST" action="guardar_documento.php">
+      <label>Remitente</label>
+      <input type="text" name="remitente" required>
+
+      <label>Asunto</label>
+      <textarea name="asunto" required></textarea>
+
+      <label>Tipo de Documento</label>
+      <select name="tipo_documento" required>
+        <option value="">Seleccione</option>
+        <option value="Oficio">Oficio</option>
+        <option value="Solicitud">Solicitud</option>
+        <option value="Carta">Carta</option>
+      </select>
+
+      <button type="submit">Confirmar Registro</button>
+    </form>
+  </div>
+</body>
+</html>

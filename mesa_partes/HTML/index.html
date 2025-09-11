@@ -1,3 +1,50 @@
+<?php
+session_start();
+
+$error = null;
+
+// Verifica si se envió el formulario
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Conexión a la base de datos
+    $conexion = new mysqli("localhost", "root", "", "mesa_partes_db");
+    if ($conexion->connect_error) {
+        die("Error de conexión: " . $conexion->connect_error);
+    }
+
+    // Obtener datos del formulario
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    // Consulta del usuario
+    $sql = "SELECT id, username, password_hash, nombre, apellido FROM usuarios WHERE username = ? AND activo = 1";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+
+    if ($usuario = $resultado->fetch_assoc()) {
+        // Verificar contraseña (SHA-256)
+        if (hash('sha256', $password) === $usuario['password_hash']) {
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['nombre'] = $usuario['nombre'] . ' ' . $usuario['apellido'];
+            $_SESSION['username'] = $usuario['username'];
+
+            // Redirigir al panel principal
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            $error = "Contraseña incorrecta";
+        }
+    } else {
+        $error = "Usuario no encontrado";
+    }
+
+    $stmt->close();
+    $conexion->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,18 +61,21 @@
         <img src="../imagenes/logoPNP.png" alt="Logo">
       </div>
       <div class="login-right">
-        <form>
+        <form method="POST">
           <div class="input-group">
             <span class="icon">👤</span>
-            <input type="text" placeholder="Usuario">
+            <input type="text" name="username" placeholder="Usuario" required>
           </div>
           <div class="input-group">
             <span class="icon">🔒</span>
-            <input type="password" id="password" placeholder="Contraseña">
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
             <span class="toggle-password" onclick="togglePassword()">👁️</span>
           </div>
           <button type="submit">Ingresar</button>
           <a href="#">¿Olvidaste tu contraseña?</a>
+          <?php if ($error): ?>
+            <p style="color: #ff6b6b; text-align: center; margin-top: 10px;"><?php echo $error; ?></p>
+          <?php endif; ?>
         </form>
       </div>
     </div>

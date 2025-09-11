@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Seguimiento de Trámite</title>
+  <link rel="stylesheet" href="../CSS/seguimiento.css">
+</head>
+<body>
+  <div class="header">🔎 Seguimiento de Trámite</div>
+  <div class="container">
+    <form method="GET" action="buscar_tramite.php">
+      <label>Código de Trámite</label>
+      <input type="text" name="codigo" required>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div class="resultado">
+      <!-- Aquí se mostrará el estado actual -->
+      <h3>Estado: <span class="estado">En proceso</span></h3>
+      <a href="descargar_constancia.php?codigo=123" class="descargar">📥 Descargar Constancia</a>
+    </div>
+  </div>
+</body>
+</html>
